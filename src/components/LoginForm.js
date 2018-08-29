@@ -1,5 +1,5 @@
 import React from 'react';
-import { userLogin } from '../actions/login'
+import { fetchUserLogin } from '../actions/login'
 import { connect } from 'react-redux';
 
 class LoginForm extends React.Component {
@@ -16,8 +16,7 @@ class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.userLogin(this.state.email, this.state.password)
-    console.log(this.props.userLogin(this.state.email, this.state.password))
+    this.props.fetchUserLogin(this.state.email, this.state.password)
   }
 
   handleClick = () => {
@@ -37,5 +36,5 @@ class LoginForm extends React.Component {
   }
 }
 
-export default connect(null, {userLogin})(LoginForm);
+export default connect(null, {fetchUserLogin})(LoginForm);
 

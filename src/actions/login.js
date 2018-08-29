@@ -19,6 +19,7 @@ export function fetchUserLogin(email, password){
     })
     .then(res => res.json())
     .then((userData) => {
+      debugger;
       localStorage.setItem('token', userData.access_token)
       dispatch(userLogin(userData.email, userData.password))
     })
