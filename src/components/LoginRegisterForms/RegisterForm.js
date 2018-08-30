@@ -1,14 +1,17 @@
 import React from 'react';
-import { fetchUserLogin } from '../actions/login'
+import { fetchNewUser } from '../../actions/register'
 import { connect } from 'react-redux';
+import './LoginRegisterForms.css'
 
-class LoginForm extends React.Component {
+class RegisterForm extends React.Component {
   state = {
+    name: "",
     email: "",
     password: ""
   }
 
   handleChange = (event) => {
+    event.preventDefault()
     this.setState({
       [event.target.name]:event.target.value
     })
@@ -16,25 +19,26 @@ class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.fetchUserLogin(this.state.email, this.state.password)
+    this.props.fetchNewUser(this.state.name, this.state.email, this.state.password)
   }
 
   handleClick = () => {
-    this.props.history.push("/register")
+    this.props.history.push("/")
   }
 
   render(){
     return(
       <form className="login" onSubmit={this.handleSubmit}>
-        <h1 style={{fontWeight:'600'}}>login</h1>
+        <h1 style={{fontWeight:'600'}}>register</h1>
+        <input className="login-input" name="name" type="text" placeholder="name" onChange={this.handleChange} value={this.state.name}/>
         <input className="login-input" name="email" type="text" placeholder="email address" onChange={this.handleChange} value={this.state.email}/>
         <input className="login-input" name="password" type="password" placeholder="password" onChange={this.handleChange} value={this.state.password}/>
-        <input className="login-button" type="submit" value="sign in" />
-        <input className="login-button register" type="button" value="register" onClick={this.handleClick}/>
+        <input className="login-button" type="submit" value="register" />
+        <input className="login-button register" type="button" value="login" onClick={this.handleClick}/>
       </form>
     )
   }
 }
 
-export default connect(null, {fetchUserLogin})(LoginForm);
+export default connect(null, {fetchNewUser})(RegisterForm);
 

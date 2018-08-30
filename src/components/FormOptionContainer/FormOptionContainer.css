@@ -1,0 +1,31 @@
+.menu{
+  width:18%;
+  border:2px solid #FF4407;
+}
+
+.forms button{
+  border:none;
+  text-decoration: none;
+  background:none;
+  display:block;
+  padding: 15px;
+  font-size:30px;
+}
+
+.shape-menu{
+  position:relative;
+  display: inline-block;
+}
+
+.shape-options{
+  display:none;
+  position:absolute;
+  text-decoration: none;
+  border:none;
+  font-size:30px;
+  padding:15px;
+}
+
+.shape-menu:hover .shape-options{
+  display: block;
+}

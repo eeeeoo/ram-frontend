@@ -1,0 +1,20 @@
+.app-title{
+  font-size:70px;
+  font-weight: 900;
+}
+
+.app-header{
+  text-align: end;
+}
+
+.rams-link:hover{
+  color: #FF4407;
+}
+
+.rams-link{
+  font-size:35px;
+  text-decoration:none;
+  color:black;
+  padding: 15px;
+  float:left;
+}
