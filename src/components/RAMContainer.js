@@ -6,17 +6,17 @@ import FormOptionContainer from './FormOptionContainer/FormOptionContainer';
 export default class RAMContainer extends React.Component{
   render(){
     return(
-      <React.Fragment>
+      <div className="ram-container">
         <div className="container">
-          <Board />
+          <Board/>
           <FormOptionContainer />
         </div>
-        {/* <NavLink
+        <NavLink
           to = "/"
           exact
           className="logout-link"
-        >logout</NavLink> */}
-      </React.Fragment>
+        >logout</NavLink>
+      </div>
     )
   }
 }

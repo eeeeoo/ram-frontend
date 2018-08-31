@@ -4,6 +4,7 @@ import LoginForm from '../LoginRegisterForms/LoginForm';
 import RegisterForm from '../LoginRegisterForms/RegisterForm';
 import RAMContainer from '../RAMContainer';
 import './App.css';
+import logo from './logo.png';
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +16,7 @@ export default class App extends React.Component {
             exact
             className="rams-link"
           >my boards</NavLink>
-          <p className="app-title">rams</p>
+          <img className="app-title" src={logo} alt="logo"/>
         </div>
         <React.Fragment>
           <Route exact path="/" component={LoginForm} />

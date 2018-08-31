@@ -1,10 +1,10 @@
 .app-title{
-  font-size:70px;
-  font-weight: 900;
+  padding-top:10px;
 }
 
 .app-header{
   text-align: end;
+  padding:30px;
 }
 
 .rams-link:hover{
