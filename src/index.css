@@ -16,13 +16,15 @@
   }
 
   .ram-container{
+    margin:50px;
+/* 
     margin-top:30px;
-    margin-bottom:30px;
+    margin-bottom:30px; */
   }
   .container{
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    /* justify-content: space-around; */
   }
 
   .board{

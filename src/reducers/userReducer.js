@@ -1,14 +1,16 @@
 const initialUserState = {
   name: null,
   email: null,
+  loggedIn: false,
+  boards: null
 }
 
 function userReducer(state = initialUserState, action){
   switch(action.type){
-    case "LOGIN": 
+    case "SET_CURRENT_USER": 
       // localStorage.setItem('jwt', action.payload.jwt)
-      console.log({email: action.payload.email})
-      return {...state, email: action.payload.email}
+      console.log({email: action.payload.email, loggedIn:true, boards: action.payload.boards})
+      return {...state, name: action.payload.name, email: action.payload.email, loggedIn:true, boards: action.payload.boards}
     case "REGISTER":
       return {...state, name: action.payload.name, email: action.payload.email}
     case "LOGOUT":

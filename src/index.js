@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk'
-import userReducer from './reducers/userReducer'
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import combineReducers from './reducers/index.js';
 import App from './components/App/App';
 import './index.css';
+
 import registerServiceWorker from './registerServiceWorker';
 
-const rootReducer = combineReducers({ userReducer })
-
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+applyMiddleware(thunk));
 
 console.log("Redux store state: ", store.getState())
 

@@ -5,6 +5,15 @@ import Draggable from 'react-draggable';
 
 export default class Image extends React.Component{
 
+  getImage(url){
+    return new Promise(function(resolve, reject){
+        var img = new Image()
+        img.onload = function(){ resolve(this) }
+        img.onerror = function(){ reject(url) }
+        img.src = url
+    })
+  }
+  
   addImageMode(){
     return (
       <div className="addImage">
@@ -28,11 +37,9 @@ export default class Image extends React.Component{
   render(){
     return(
       <Draggable
-      axis="x"
       handle=".handle"
       defaultPosition={{x: 12, y: 200}}
       position={null}
-      grid={[25, 25]}
       onStart={this.handleStart}
       onDrag={this.handleDrag}
       onStop={this.handleStop}
