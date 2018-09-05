@@ -27,7 +27,10 @@ const App = () =>  {
           <Route exact path="/create" component={RamCreator} />
           <Route exact path="/about" component={About} />
           <Route exact path="/rams" component={RamsContainer} />
-          <Route exact path="/board:id" render={props => <Ram {...props} />} />
+          <Route exact path="/board:id" render={props => 
+            <Ram {...props} />
+          } 
+        />
 
         </React.Fragment>
       </div>

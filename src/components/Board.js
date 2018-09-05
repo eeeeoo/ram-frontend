@@ -6,15 +6,19 @@ import ellipse from './Shape/Ellipse';
 import Ellipse from './Shape/Ellipse';
 import Rectangle from './Shape/Rectangle';
 
-export default class Board extends React.Component{
-  render(){
-    return(
-      <div id="board" className="board">
-        {/* <Image /> */}
-        {/* <P5Wrapper sketch={ellipse} /> */}
-        {/* <Ellipse />
-        <Rectangle /> */}
-      </div>
-    )
-  }
+const Board = () => {
+  // createMarkup = (content) => {
+  //   return {__html: content};
+  // }
+  return(
+    <div id="board" className="board">
+      {/* <div dangerouslySetInnerHTML={this.createMarkup(this.props.board.content)}/> */}
+      {/* <Image /> */}
+      {/* <P5Wrapper sketch={ellipse} /> */}
+      {/* <Ellipse />
+      <Rectangle /> */}
+    </div>
+  )
 }
+
+export default Board
