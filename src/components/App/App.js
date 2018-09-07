@@ -6,7 +6,6 @@ import RamCreator from '../RamCreator';
 import About from '../About/About';
 import RamsContainer from '../RamsContainer/RamsContainer'
 import Ram from '../RamsContainer/Ram';
-
 import './App.css';
 import logo from './logo.png';
 
@@ -19,23 +18,24 @@ const App = () =>  {
             exact
             className="rams-link"
           >my boards</NavLink> */}
-          <img className="app-title" src={logo} alt="logo"/>
+          <img className="app-logo" src={logo} alt="logo"/>
         </div>
         <React.Fragment>
           <Route exact path="/" component={LoginForm} />
           <Route exact path="/register" component={RegisterForm} />
-          <Route exact path="/create" component={RamCreator} />
+          <Route exact path="/create" render={props => 
+            <RamCreator {...props} />
+            }
+          />
           <Route exact path="/about" component={About} />
           <Route exact path="/rams" component={RamsContainer} />
           <Route exact path="/board:id" render={props => 
             <Ram {...props} />
           } 
         />
-
         </React.Fragment>
       </div>
     );
   }
 
   export default withRouter(App);
-

@@ -1,6 +1,5 @@
 const initialBoardState = {
   boards: null,
-  activeBoard: null,
   title:null,
   content:null,
   user_id:null
@@ -15,7 +14,6 @@ function boardReducer(state = initialBoardState, action){
     default:
       return state
   }
-
 }
 
 export default boardReducer

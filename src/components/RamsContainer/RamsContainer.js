@@ -9,27 +9,28 @@ class RamsContainer extends React.Component{
     return(
       <div className="ram-container">
         <div className="container">
-          <div className="reverse-outline">welcome</div>
-          <div className="outline">{this.props.name}</div>
+          <div className="outline">welcome</div>
+          <div className="reverse-outline">{this.props.name}</div>
         </div>
-        <div>
+        <div className="create-container">
           <NavLink
             to = "/create"
             exact
             className="create-link" 
-          >create new board</NavLink>
+          >+ new board</NavLink>
         </div>
         <div className="rams-list">
-          <h1>access my boards</h1>
-          {this.props.boards.map(board=> 
+          {/* <h1>my boards</h1> */}
+          {/* possibly use hoc for navlink */}
+          {this.props.boards ? this.props.boards.map(board=> 
             <NavLink 
             className="ram-link"
             to = {`/board${board.id}`}
             exact 
             key={board.id}
             content={board.content}
-            >{board.title}</NavLink>
-          )}
+            >-{board.title}</NavLink>
+          ): null}
         </div>
       </div>
     )
