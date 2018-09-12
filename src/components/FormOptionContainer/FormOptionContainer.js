@@ -5,7 +5,7 @@ import Oval from './assets/Oval.svg';
 import Rectangle from './assets/Rectangle.svg';
 import { connect } from 'react-redux';
 import withAuth from '../../hocs/withAuth';
-import { addImageForm } from '../../actions/form';
+import * as actions from '../../actions';
 
 const FormOptionContainer = (props) => {
   console.log(props.imgForms.find(imgForm => imgForm.imgForm.id === 1))
@@ -13,7 +13,7 @@ const FormOptionContainer = (props) => {
     <div className="menu">
       <div className="forms">
         <button onClick={() => props.addImageForm()}>+ image</button>
-        <button>+ text</button>
+        <button onClick={() => props.addTextForm()}>+ text</button>
         <div className="shape-menu">
           <button>+ shape</button>
           <div name="shape" className="shape-options">
@@ -38,10 +38,11 @@ const FormOptionContainer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    imgForms: state.formReducer.imgForms
+    imgForms: state.formReducer.imgForms,
+    txtForms: state.textReducer.txtForms
   }
 }
 
 export default withAuth(
-  connect(mapStateToProps,{addImageForm})(FormOptionContainer)
+  connect(mapStateToProps,actions)(FormOptionContainer)
 );

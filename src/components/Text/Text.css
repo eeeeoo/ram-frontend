@@ -1,0 +1,38 @@
+.addText{
+  width:200px;
+  padding:15px;
+  background-color: #D4D7D0;
+  padding-top:10px;
+  box-shadow: 0 1px 10px #D4D7D0;
+  -moz-box-shadow: 0 1px 10px #D4D7D0;
+  -webkit-box-shadow: 0 1px 10px #D4D7D0;
+  cursor:pointer;
+}
+
+
+.deleteButton{
+  border:none;
+  text-decoration: none;
+  background:none;
+  display:block;
+  float:right;
+  font-size:20px;
+}
+
+.addText textarea{
+  font-size:20px;
+  width:160px;
+}
+
+.addButton{
+  display:block;
+  border: 1px solid #423F40;
+  text-decoration: none;
+  background:none;
+  font-size:20px;
+}
+
+.deleteButton:hover, 
+.addButton:hover{
+  color:#FF4407;
+}

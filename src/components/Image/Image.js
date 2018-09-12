@@ -4,7 +4,7 @@ import './Image.css';
 import Draggable from 'react-draggable';
 import { connect } from 'react-redux';
 import withAuth from '../../hocs/withAuth';
-import { addImageForm, dragForm, addImageSrc } from '../../actions/form';
+import * as actions from '../../actions';
 
 class Image extends React.Component{
   componentDidMount() {
@@ -29,7 +29,7 @@ class Image extends React.Component{
 
   handleClick = (event) => {
     console.log(this.refs.src.value)
-    this.props.addImageForm(this.refs.src.value)
+    // this.props.addImageForm(this.refs.src.value)
   }
   
   addImageMode(){                                   
@@ -38,7 +38,7 @@ class Image extends React.Component{
         <button className="deleteButton">X</button>
         <p>add image url</p>
         <input ref="src" defaultValue={this.props.src} onChange={this.handleChange}/>
-        <button className="addButton" type="submit" onClick={this.handleClick}>+</button>
+        <button className="addButton" onClick={this.handleClick}>+</button>
       </div>  
     )
   }
@@ -47,7 +47,7 @@ class Image extends React.Component{
     return (
       <div className="displayImage">
         <button className="deleteButton">X</button>
-        <img name="src" src="" alt=""/>
+        <img name="src" style={{height:'150px', width:'150px'}} src="" alt=""/>
       </div>
     )
   }
@@ -55,6 +55,13 @@ class Image extends React.Component{
   render(){
     console.log(this.props.id)
     return(
+      // <Draggable
+// handle=".handle"
+// position={this.props.position}
+// onStart={this.handleStart}
+// onDrag={this.handleDrag}
+// onStop={this.handleStop}
+// >
       <div className="handle">{this.addImageMode()}</div>
     )
   }
@@ -67,7 +74,7 @@ const mapStateToProps = (state) => {
 }
 
 export default withAuth(
-  connect(mapStateToProps,{addImageForm})(Image)
+  connect(mapStateToProps, actions)(Image)
 );
 
 // <Draggable
