@@ -17,6 +17,7 @@ export const fetchUserLogin = (email, password) => {
     })
     .then(res => res.json())
     .then((userData) => {
+      console.log(userData)
       localStorage.setItem('token', userData.access_token)
       dispatch(setCurrentUser(userData))
     })
@@ -59,3 +60,5 @@ export function fetchNewUser(name, email, password){
     .then(userData => dispatch(userRegister(userData)))
   }
 }
+
+

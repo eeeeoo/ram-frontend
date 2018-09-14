@@ -3,8 +3,13 @@ import './RamsContainer.css';
 import { NavLink, } from 'react-router-dom';
 import { connect } from 'react-redux';
 import withAuth from '../../hocs/withAuth';
+import * as actions from '../../actions';
 
 class RamsContainer extends React.Component{
+  logout = () => {
+    localStorage.clear()
+    window.location= 'http://localhost:3001'
+  }
   render(){
     return(
       <div className="ram-container">
@@ -32,6 +37,7 @@ class RamsContainer extends React.Component{
             >-{board.title}</NavLink>
           ): null}
         </div>
+        <button className="logout" onClick={this.logout}>logout</button>
       </div>
     )
   }
@@ -45,5 +51,5 @@ const mapStateToProps = ({userReducer: {name, boards}}) => {
 }
 
 export default withAuth(
-  connect(mapStateToProps)(RamsContainer)
+  connect(mapStateToProps, actions)(RamsContainer)
 );

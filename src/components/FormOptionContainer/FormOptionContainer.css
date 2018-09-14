@@ -16,17 +16,25 @@
   padding:35px;
   font-size:30px;
 }
+.board-menu button{
+  border:none;
+  text-decoration: none;
+  background:none;
+  display:block;
+  padding:35px;
+  font-size:30px;
+}
 
 .shape-menu{
   position:relative;
 }
 
-.shape-options{
+/* .shape-options{
   display:none;
   background-color:white;
   position:absolute;
   margin-left:15px;
-}
+} */
 
 .shape-options img{
   width:90%;

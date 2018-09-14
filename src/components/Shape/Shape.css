@@ -1,4 +1,4 @@
-.addText{
+.addImage{
   width:200px;
   padding:15px;
   background-color: #D4D7D0;
@@ -9,7 +9,12 @@
   cursor:pointer;
 }
 
-
+.shape-options{
+  background-color:white;
+  
+  /* position:absolute; */
+  /* margin-left:15px; */
+}
 .deleteButton{
   border:none;
   text-decoration: none;
@@ -19,13 +24,7 @@
   font-size:20px;
 }
 
-.addText textarea{
-  font-size:20px;
-  width:160px;
-}
-
 .addButton{
-  display:block;
   border: 1px solid #423F40;
   text-decoration: none;
   background:none;
@@ -37,10 +36,34 @@
   color:#FF4407;
 }
 
-.displayText{
-  font-size:30px;
+.displayImage{
+  /* display:block; */
+  /* position:relative; */
+  height:200px;
   width:200px;
   padding:15px;
-  position:absolute;
-  
+}
+
+.displayImage .deleteButton{
+  /* display: none; */
+  /* position: absolute; */
+  cursor:pointer;
+  top: 10%;
+  right: 10%;
+  /* margin-bottom:-45px; */
+}
+
+.displayImage:hover .deleteButton{
+  display:block;
+  color:#FF4407;
+}
+
+.displayImage img{
+  padding:0;
+  margin:0;
+  height:200px;
+}
+
+.drag-bar{
+  cursor: -webkit-grabbing;
 }

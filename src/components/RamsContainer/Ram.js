@@ -12,12 +12,12 @@ const Ram = ({ match, boards }) => {
   return (
     <div className="ram-container">
       <div className="container">
-        <div id="board" className="board">
-          <div dangerouslySetInnerHTML={createMarkup(board.content)}/>
-        </div>
-        <div className="controls">
+        <div className="controls" style={{display:'none'}}>
           <button>edit</button>
           <button>delete</button>
+        </div>
+        <div id="board" className="board">
+          <div dangerouslySetInnerHTML={createMarkup(board.content)}/>
         </div>
       </div>
     </div>

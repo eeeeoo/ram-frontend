@@ -11,48 +11,85 @@ import { connect } from 'react-redux';
 import withAuth from '../hocs/withAuth';
 import * as actions from '../actions';
 
-const Board = (props) => {
-  console.log(props.imgForms)
+class Board extends React.Component{
 
-  const eachImage = (imgData) => {
-    return (<Image
-              key={imgData.id}
-              id={imgData.id}
-              src={imgData.src}
-              position={imgData.position}
-              editing={imgData.editing}
-              imgWidth={imgData.imgWidth}
-              imgHeight={imgData.imgHeight}
-              // dragForm={() => props.dragForm(imgData.id, imgData.position)}
+  eachNote(txtNote){
+    return (<Text
+              key={txtNote.id}
+              id={txtNote.id}
+              position={txtNote.position}
+              editing={txtNote.editing}
+              onTxtNoteDrag={this.props.onTxtNoteDrag}
+              onTxtNoteToggle={this.props.onTxtNoteToggle}
+              onTxtNoteRemove={this.props.onTxtNoteRemove}
+              onTxtNoteSave={this.props.onTxtNoteSave}
+              onColorChange={this.props.onColorChange}
+              color={txtNote.color}
+              note={txtNote.note}
             />)
   }
 
-  const eachText = (txtData) => {
-    return(<Text 
-            key={txtData.id}
-            id={txtData.id}
-    
-          />)
+  eachImage(imgNote){
+    return (<Image
+              key={imgNote.id}
+              id={imgNote.id}
+              src={imgNote.src}
+              position={imgNote.position}
+              editing={imgNote.editing}
+              imgWidth={imgNote.imgWidth}
+              imgHeight={imgNote.imgHeight}
+              onImgNoteDrag={this.props.onImgNoteDrag}
+              onImgNoteToggle={this.props.onImgNoteToggle}
+              onImgNoteRemove={this.props.onImgNoteRemove}
+              onImgNoteSave={this.props.onImgNoteSave}
+            />)
   }
 
+  eachShape(shapeNote){
+    return (<Ellipse
+              key={shapeNote.id}
+              id={shapeNote.id}
+              color={shapeNote.color}
+              shape={shapeNote.shape}
+              position={shapeNote.position}
+              editing={shapeNote.editing}
+              onShapeNoteDrag={this.props.onShapeNoteDrag}
+              onShapeNoteToggle={this.props.onShapeNoteToggle}
+              onShapeNoteRemove={this.props.onShapeNoteRemove}
+              onShapeNoteSave={this.props.onShapeNoteSave}
+            />)
+  }
+
+  render(){
   return(
-    <div id="board" className="board">
+    <React.Fragment>
       {/* <P5Wrapper sketch={ellipse} /> */}
       {/* <Ellipse />
       <Rectangle /> */}
-      {props.imgForms.map(imgForm => eachImage(imgForm.imgForm))}
-      {props.txtForms.map(txtForm => eachText(txtForm))}
-    </div>
+      {
+          !this.props.activeBoard ? '' : //no board available to render
+
+          <div id="board" className="board">
+            {this.props.activeBoard.txtNotes.map(this.eachNote, this)}
+            {this.props.activeBoard.imgNotes.map(this.eachImage, this)}
+            {this.props.activeBoard.shapeNotes.map(this.eachShape, this)}
+
+          </div>
+      }
+    </React.Fragment>
   )
 }
-
-const mapStateToProps = (state) => {
-  return {
-    imgForms: state.formReducer.imgForms,
-    txtForms: state.textReducer.txtForms
-  }
 }
 
-export default withAuth(
-  connect(mapStateToProps, actions)(Board)
-);
+
+// const mapStateToProps = (state) => {
+//   return {
+//     imgForms: state.formReducer.imgForms,
+//     txtForms: state.textReducer.txtForms
+//   }
+// }
+
+export default Board;
+// export default withAuth(
+//   connect(mapStateToProps, actions)(Board)
+// );
