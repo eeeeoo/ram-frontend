@@ -1,13 +1,19 @@
 # Rams
-
-> JavaScript & React front end (wrote all styling using vanilla CSS only)
-
-> Ruby on Rails API back end repo: https://github.com/eeeeoo/ram-backend
+> Visual note-taking app built out of <a target="_blank" href="https://github.com/eeeeoo/ram-backend">Rails back-end API</a>, React front-end, and stying using vanilla CSS. 
 
 #### Rams is a visual note-taking app inspired by the color schemes and simple design by designer Dieter Rams that uses shapes, colors, and text to help you think and create. Users can log in to view prior visualizations, create multiple notes, and save for later use. 
 
 ## Installation
-
+```sh
+1. cd rams-backend
+2. run `rails s -p 3001`
+3. open a second tab in your terminal
+4. cd rams-frontend
+5. run npm start
+6. it will ask if you want to run on a different port other than port 3000 currently hosting your rails server
+7. Y for yes
+8. Site should be accessible on `http://localhost:3000/` if you have no other apps running in the background.
+```
 ## Demo
 
 ## Release History
@@ -16,9 +22,7 @@
 
 ## Meta
 
-Jee Yoon Lee – https://eeeeoo.com – jlee66@wellesley.edu
-
-[https://github.com/eeeeoo](https://github.com/eeeeoo)
+* **Jee Yoon Lee** – [github.com/eeeeoo](https://github.com/eeeeoo)
 
 ## Contributing
 
