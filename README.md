@@ -3,6 +3,8 @@
 
 #### Rams is a visual note-taking app inspired by the color schemes and simple design by designer Dieter Rams that uses shapes, colors, and text to help you think and create. Users can log in to view prior visualizations, create multiple notes, and save for later use. 
 
+<img src="rams.png" alt="project-overview" />
+
 ## Installation
 ```sh
 1. cd rams-backend
@@ -16,6 +18,21 @@
 9. Site should be accessible on `http://localhost:3000/` if you have no other apps running in the background.
 ```
 ## Demo
+
+**1.Login (Auth)**
+
+<img src="register.gif" alt="login" />
+
+
+**2.Making Boards as Notes with Text, Images, and Shapes**
+
+<img src="notes.gif" alt="making visual notes" />
+
+
+**3.Looking at Saved Boards**
+
+<img src="saved.gif" alt="saved visual notes" />
+
 
 ## Release History
 * 0.1.0
